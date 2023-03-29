@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ES-es">	
+<head>				
+	<meta charset="utf-8"/><br>
+	<meta name="Description"  content="Descripcion de la pagina"/>
+	<meta name="Keywords" content="Palabras clave, separadas por comas" />
+	<title>Index</title>
+
+
+</head>	
+<body>
+    <button onclick="alerta()">Pulsa</button> 
+
+    <script>
+        function alerta() {
+            alert("Este es un mensaje en un popup");
+            console.log("Este es un mensaje en la consola")
+        }
+    </script>
+
+
+
+<button onclick="mostrar()">Muestra/Oculta</button> 
+<div id="muestra">Este es un texto
+</div>
+<script>
+    function mostrar(){
+     let muestra = document.querySelector("#muestra");
+    if( muestra.style.display === "none") {
+        muestra.style.display = "block";
+            } else {
+                muestra.style.display = "none";
+            }
+}
+</script>
+
+
+<form>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+</form>
+<button onclick="sumar()">Sumar</button>
+
+<script>
+    function sumar(){
+        var nume1 = Number(document.querySelector("#num1").value);
+        var nume2 = Number(document.querySelector("#num2").value);
+        
+        alert(nume1+nume2);
+    }
+</script>
+
+
+<p id="textito">Este es un texto bonito</p>
+
+<script>
+document.getElementById("textito").onmouseover = function() {  
+    let texto= document.getElementById("textito");
+     texto.style.fontSize  = "125%"
+     texto.style.color='blue';
+                        };
+
+ document.getElementById("textito").onmouseout = function() {        
+    let texto= document.getElementById("textito");
+     texto.style.fontSize  = "100%";
+     texto.style.color=' black';
+                        };
+
+</script>
+</body> </html>

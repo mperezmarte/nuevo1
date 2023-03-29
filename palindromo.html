@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="palabra" placeholder="Introduce tu palabra o frase">
+    </form>
+    <div id="mostrar"></div>
+ <button onclick="mostrar()">Enviar</button>
+
+
+  <script>
+ function mostrar(){
+    var palabra = document.getElementById('palabra').value;
+    
+    function palindrome(str) {
+        var re = /[\W_]/g;
+        var lowRegStr = str.toLowerCase().replace(re, '');
+        var reverseStr = lowRegStr.split('').reverse().join(''); 
+        return reverseStr === lowRegStr;
+    }
+    palindrome(palabra);
+
+    if(palindrome(palabra) == true){
+        document.getElementById("mostrar").innerHTML = palabra  + " es un palindromo";
+    }else{
+        document.getElementById("mostrar").innerHTML = palabra  + " no es un palindromo";
+    }
+  
+}
+ </script>
+
+<br/>
+<form action="">
+    <input type="date" name="" id="fecha">
+</form>
+<div id ="estacion"></div>
+<button onclick="comprobar()">Comprobar estación</button>
+
+<script>
+    function comprobar(){
+        
+        let datePrueba = new Date(document.getElementById('fecha').value);
+
+        let dia = datePrueba.getDate();
+        let mes= datePrueba.getMonth();
+        mes++;
+        console.log(datePrueba, dia, mes);
+       
+        if((mes==3 && dia>=21  ) || (mes<=6 && dia<=20 )){
+            console.log("Primavera")
+            document.getElementById("estacion").innerHTML = "Es primavera" 
+
+        }else if((mes==6 && dia>=21 ) || ( mes<=9 && dia<=19)){
+            console.log("Verano")
+            document.getElementById("estacion").innerHTML = "Es verano"
+            
+        }else if(( mes==9 && dia>=20) || (mes<=12 && dia<20)){
+            console.log("Otoño")
+            document.getElementById("estacion").innerHTML = "Es Otoño"
+        }
+        else if((mes==12 && dia>=20) || (mes<=3 && dia<=20)){
+            console.log("Invierno")
+            document.getElementById("estacion").innerHTML = "Es Invierno"
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+   <div id="array"></div>
+   <div id="media"></div>
+    <script>
+    var numeros=[];
+    var total=0;
+    var avg;
+    for(i=0; i<5; i++){
+        numeros[i]= parseInt(prompt("introduce un número"));
+    }
+    console.log(numeros);
+
+    for(i=0; i< numeros.length; i++){
+        total+=numeros[i];
+    }
+    avg=total/numeros.length;
+
+    console.log(avg)
+
+    document.getElementById("array").innerHTML = "Los números son " + numeros;
+    document.getElementById("media").innerHTML = "Y la media es: " +avg;
+    </script>
+
+
+<form>
+    <input type="text" id="nombre">
+    <input type="text" id="apellido">
+</form>
+<button onclick="nombre()">Enviar</button>
+<div id="informacion"></div>
+
+<script>
+    function nombre(){
+        let nom= document.getElementById("nombre").value;
+        let ape = document.getElementById("apellido").value;
+        document.getElementById("informacion").innerHTML = "Mi nombre es " + nom +" y mi apellido " + ape;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cambiar()">Color del fondo</button> 
+
+    <script>
+        function cambiar(){
+        let cuerpo= document.querySelector("body");
+        cuerpo.style.backgroundColor='palevioletred';
+    }
+    </script>
+
+    <button onclick="aleatorio()">Número Aleatorio</button> 
+    <div id="numeroAleatorio"></div>
+
+    <script>
+        function aleatorio(){
+            let numAlea = Math.floor(Math.random() *100);
+            console.log(numAlea);
+            document.getElementById("numeroAleatorio").innerHTML = numAlea;
+          
+
+
+        }
+    </script>
+
+    <div id="nombre">Paola Pérez</div>
+    <button onclick="nombre()">Nombre</button>
+
+    <script>
+        function nombre(){
+            let nom = document.getElementById("nombre");
+            nom.style.color="blue";
+        }
+    </script>
+
+
+<script>
+
+let dia = parseInt(prompt("Introduce día del año entre 1 y 31."));  
+let mes = parseInt(prompt("Introduce mes del año entre 1 y 12.")); 
+let estacion="estacion";
+console.log(estacion);
+console.log(dia, mes)
+    if ((mes >= 3 && dia >= 20) && (mes <= 6 && dia < 21)){ 
+    estacion = "Primavera";
+    console.log("Entro en 1");
+    alert("La estación es " + estacion);
+    } else if ((mes >= 6 && dia >= 21) && (mes <= 9 && dia < 23)) { 
+    estacion = "Verano";
+    console.log("Entro en 2");
+    alert("La estación es " + estacion);
+    } else if ((mes >= 9 && dia >= 23) && (mes <= 12 && dia < 21)) {
+    estacion = "Otoño";
+    console.log("Entro en 3");
+    alert("La estación es " + estacion);
+    } else if ((mes >= 12 && dia >= 21) && (mes <= 3 && dia < 20)) {
+    estacion = "Invierno";  
+    console.log("Entro en 4");
+    alert("La estación es " + estacion);
+    } else {  
+    estacion = "El mes o día introducido es inválido"; 
+    alert("La estación es " + estacion);
+    }
+    
+    
+ </script>
+</body>
+</html>
